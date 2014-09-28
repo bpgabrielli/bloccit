@@ -2,4 +2,4 @@
 
 Made with my mentor at [Bloc](http://bloc.io).
 
-Check it out Bloccit at [bruno-bloccit.herokuapp.com](http://bruno-bloccit.herokuapp.com/)
+Check it out at [bruno-bloccit.herokuapp.com](http://bruno-bloccit.herokuapp.com/)
