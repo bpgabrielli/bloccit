@@ -10,4 +10,26 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
 
+def markdown_title
+  render_as_markdown title
+end
+
+def markdown_body
+  render_as_markdown body
+end
+
+def render_as_markdown title
+    renderer = Redcarpet::Render::HTML.new
+    extensions = {fenced_code_blocks: true}
+    redcarpet = Redcarpet::Markdown.new(renderer, extensions)
+    (redcarpet.render :title).html_safe
+end  
+
+def render_as_markdown body
+    renderer = Redcarpet::Render::HTML.new
+    extensions = {fenced_code_blocks: true}
+    redcarpet = Redcarpet::Markdown.new(renderer, extensions)
+    (redcarpet.render :body).html_safe
+end  
+
 end
