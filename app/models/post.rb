@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   has_many :comments
   belongs_to :user
-   belongs_to :topic
+  belongs_to :topic
 
   default_scope { order('created_at DESC') }
 
@@ -11,11 +11,11 @@ class Post < ActiveRecord::Base
   validates :user, presence: true
 
   def markdown_title
-    render_as_markdown title
+    render_as_markdown(self.title)
   end
 
   def markdown_body
-    render_as_markdown body
+    render_as_markdown(self.body)
   end
 
 private
