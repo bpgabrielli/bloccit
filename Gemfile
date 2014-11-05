@@ -58,6 +58,14 @@ gem 'fog'
 
 gem 'will_paginate', '~> 3.0.5'
 
+group :development do
+  gem "better_errors"
+end
+
+group :development do
+  gem "binding_of_caller"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
