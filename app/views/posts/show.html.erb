@@ -10,9 +10,12 @@
      <div><%= image_tag(@post.image.url) if @post.image? %></div>
     <p><%= markdown @post.body %></p>    
 
-    <%= render @comments %>
+    <%= @comments.each do |comment| %>
+      <%= render partial: 'comments/comment', locals: { post: @post, comment: comment } %>
+    <% end %>
+
     <% if current_user %>
-      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+      <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
     <% end %>
     
   </div>
