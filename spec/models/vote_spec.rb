@@ -4,9 +4,9 @@ describe Vote do
       it "only allows -1 or 1 as values" do
 
        before do
-         v = Vote.new(value: 1)
-         v2 = Vote.new(value: -1)
-         v3 = Vote.new(value: 2)
+         @v = Vote.new(value: 1)
+         @v2 = Vote.new(value: -1)
+         @v3 = Vote.new(value: 2)
        end
 
        describe '1 as value' do # Or should this reference the method #valid?
