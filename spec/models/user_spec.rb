@@ -12,12 +12,12 @@ describe User do
    end
 
    it "returns `nil` if the user has not favorited the post" do
-     expect( @user.favorites.find_by_post_id(@post.id) ).to be_nil
+     expect( @user.favorited(@post) ).to be_nil
    end
 
    it "returns the appropriate favorite if it exists" do
      @user.favorites.create(post: @post)
-     expect( @user.favorites.find_by_post_id(@post.id) ).not_to be_nil
+     expect( @user.favorited(@post).user_id ).to eq(@user.id)
    end
  end
 end
