@@ -58,6 +58,10 @@ gem 'fog'
 
 gem 'will_paginate', '~> 3.0.5'
 
+group :test do
+  gem 'capybara' 
+end
+
 group :development do
   gem "better_errors"
 end
