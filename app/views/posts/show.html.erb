@@ -12,7 +12,7 @@
      <div><%= image_tag(@post.image.url) if @post.image? %></div>
     <p><%= markdown @post.body %></p>    
 
-    <%= @comments.each do |comment| %>
+    <% @comments.each do |comment| %>
       <%= render partial: 'comments/comment', locals: { post: @post, comment: comment } %>
     <% end %>
 
