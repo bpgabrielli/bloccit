@@ -13,11 +13,11 @@
     <p><%= markdown @post.body %></p>    
 
     <% @comments.each do |comment| %>
-      <%= render partial: 'comments/comment', locals: { post: @post, comment: comment } %>
+      <%= render partial: 'comments/comment', collection: @comments, locals: { post: @post, comment: comment } %>
     <% end %>
 
     <% if current_user %>
-      <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
+      <%= render partial: 'comments/form', collection: @comments, locals: { post: @post, comment: @comment } %>
     <% end %>
     
   </div>
