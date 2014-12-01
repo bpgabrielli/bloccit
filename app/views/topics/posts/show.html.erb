@@ -12,12 +12,12 @@
      <div><%= image_tag(@post.image.url) if @post.image? %></div>
     <p><%= markdown @post.body %></p>    
 
-    <% @comments.each do |comment| %>
-      <%= render partial: 'comments/comment', collection: @comments, locals: { post: @post, comment: comment } %>
-    <% end %>
+  
+      <%= render partial: 'comments/comment', collection: @comments, locals: { post: @post, comment: @comment } %>
+ 
 
     <% if current_user %>
-      <%= render partial: 'comments/form', collection: @comments, locals: { post: @post, comment: @comment } %>
+      <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
     <% end %>
     
   </div>
