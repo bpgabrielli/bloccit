@@ -1,5 +1,3 @@
-
-
 <div class="row">
   <div class="col-md-8">
    <%= render partial: 'votes/voter', locals: { post: @post } %>
@@ -12,14 +10,15 @@
      <div><%= image_tag(@post.image.url) if @post.image? %></div>
     <p><%= markdown @post.body %></p>    
 
-  
-      <%= render partial: 'comments/comment', collection: @comments, locals: { post: @post, comment: @comment } %>
- 
-
-    <% if current_user %>
-      <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
-    <% end %>
-    
+    <h2>Comments</h2>
+     <div class='js-comments'>
+      <%= render partial: 'comments/comment', collection: @comments %>
+     </div>
+     <div class='new-comment'>
+      <% if current_user %>
+        <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
+      <% end %>
+     </div>  
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
